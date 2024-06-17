@@ -5,8 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:bk654"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Сделать заказ" Height="450" Width="800">
+    <StackPanel>
+        <DataGrid x:Name="createOrderDataGrid" Height="300" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Имя" Binding="{Binding name}"/>
+                <DataGridTextColumn Header="Описание" Binding="{Binding description}"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding price}"/>
+                <DataGridTemplateColumn Header="Количество">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="-" Width="20" Margin="0,0,5,0" Click="decrement_Click"/>
+                                <TextBlock Text="{Binding Count}" Margin="0,0,5,0"/>
+                                <Button Content="+" Width="20" Margin="0,0,5,0" Click="increment_Click"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
 
-    </Grid>
+        <Button x:Name="createOrderButton" Content="Сделать Заказ" Click="CreateOrderButton_Click"/>
+    </StackPanel>
+   
 </Window>
