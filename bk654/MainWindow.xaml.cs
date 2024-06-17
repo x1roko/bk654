@@ -84,6 +84,7 @@ namespace bk654
 
         private void decrement_Click(object sender, RoutedEventArgs e)
         {
+
             if (products[((ProductModel)createOrderDataGrid.SelectedItem).product_id-1].Count > 0)
                 products[((ProductModel)createOrderDataGrid.SelectedItem).product_id-1].Count--;
         }
