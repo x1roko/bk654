@@ -1,0 +1,28 @@
+﻿<Window x:Class="bk654.StartWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:bk654"
+        mc:Ignorable="d"
+        Title="StartWindow" Height="450" Width="800" MinWidth="800" MinHeight="450" MaxWidth="800" MaxHeight="450">
+    <Grid>
+        <Image Source="images\logo.jpg"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200"/>
+                <RowDefinition/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="nameTextBlock" HorizontalAlignment="Right"/>
+            <StackPanel Grid.Row="1">
+                <Button x:Name="showStockButton" Content="Склад" Width="200" Click="ShowStockButton_Click" Visibility="Hidden"/>
+                <Button x:Name="createOrderButton" Content="Меню" Width="200" Click="CreateOrderButton_Click"/>
+                <Grid>
+                    <Button x:Name="authorizationButton" Content="Авторизоваться" Width="200" Click="LoginButton_Click"/>
+                    <Button x:Name="logoutButton" Content="Выйти из аккаунта" Width="200" Click="LogoutButtob_Click" Visibility="Hidden"/>
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

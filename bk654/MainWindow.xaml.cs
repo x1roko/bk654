@@ -43,13 +43,8 @@ namespace bk654
                 }
                 connection.Close();
                 DataContext = products;
-                createOrderDataGrid.ItemsSource = products;//.Select(p => new { p.name, p.price, p.description, p.isAdded});
+                createOrderDataGrid.ItemsSource = products;
             }
-        }
-
-        void CreateOrder()
-        {
-            
         }
 
         private void CreateOrderButton_Click(object sender, RoutedEventArgs e)
